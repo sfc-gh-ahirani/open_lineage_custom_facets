@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/sfc-gh-ahirani/open_lineage_custom_facets/main/SnowflakeTestJobFacet.json",
+  "$defs": {
+    "SnowflakeTestJobFacet": {
+      "allOf": [
+        {
+          "$ref": "https://openlineage.io/spec/1-0-2/OpenLineage.json#/$defs/JobFacet"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "details": {
+              "type": "string",
+              "example": "SELECT * FROM foo"
+            }
+          },
+          "required": [
+            "details"
+          ]
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "type": "object",
+  "properties": {
+    "snowflake_test": {
+      "$ref": "#/$defs/SnowflakeTestJobFacet"
+    }
+  }
+}
